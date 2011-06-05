@@ -18,7 +18,6 @@ $("#<%= @comment.category %>").append("<%= escape_javascript(render(@comment)) %
 
 /* scheint zu funktioniere */
 /* $("#comment_<%= @comment.id %>").animate({"left": "-=50px"}, "slow"); */
-alert('#comment_<%= @comment.id %>');
 $("#comment_<%= @comment.id %>").effect("highlight", {}, 3000);
 alert('#comment_<%= @comment.id %>');
 /* Reset the comment form */
