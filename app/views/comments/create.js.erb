@@ -4,15 +4,20 @@ $("#comment-notice").html('<div class="flash notice"><%= escape_javascript(flash
 /* Replace the count of comments */
 $("#comments_count").html("<%= pluralize(Comment.count, 'Comment') %>");
 
-/* Add the new comment to the bottom of the comments list */
+/* Ursprüngliche Version zum anhängen an comments */
 /* $("#comments").append("<%= escape_javascript(render(@comment)) %>");*/
-alert('<%= escape_javascript(render(@comment)) %>');
+/* 1. Es wird nur der Kommentar an die richtige Kategorie gehangen */
+/* $("#<%= @comment.category %>").append("<%= @comment.body.html_safe %>");*/
+
+/* 2. Nun wird die View _comment an die Kategorie gehangen !! */
 $("#<%= @comment.category %>").append("<%= escape_javascript(render(@comment)) %>");
+
+
 /*  Highlight the new comment */
 /*alert('#comment_<%= @comment.id %>');*/
 
-
-$("#comment_<%= @comment.id %>").animate({"left": "-=50px"}, "slow");
+/* scheint zu funktioniere */
+/* $("#comment_<%= @comment.id %>").animate({"left": "-=50px"}, "slow"); */
 alert('#comment_<%= @comment.id %>');
 $("#comment_<%= @comment.id %>").effect("highlight", {}, 3000);
 alert('#comment_<%= @comment.id %>');

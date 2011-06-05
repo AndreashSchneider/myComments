@@ -1,30 +1,11 @@
 <%= div_for comment do %>
-  <span class="dateandoptions">
+  <!--  <span class="dateandoptions">
     Posted <%=time_ago_in_words(comment.created_at)%> ago<br />
-<%= link_to 'Delete', comment_path(comment), :method => :delete, :class => "delete" , :remote => true%>
-  </span>
-<p><b><%= comment.name %></b> wrote:</p>
-<br />
- <div id="Herausforderung" >
-  <% if comment.category== "Herausforderung" %>
-    <%= comment.body.html_safe unless comment.body.nil? %>
-  <% end %>
- </div> 
- <div id="Loesung_Idee" >
-  <% if comment.category== "Loesung_Idee" %>
-    <%= comment.body.html_safe unless comment.body.nil? %>
-  <% end %>
- </div> 
- <div id="Bedenken_Einwaende" >
-  <% if comment.category== "Bedenken_Einwaende" %>
-    <%= comment.body.html_safe unless comment.body.nil? %>
-  <% end %>
- </div> 
- <div id="Information_Sichtweise" >
-  <% if comment.category== "Information_Sichtweise" %>
-    <%= comment.body.html_safe unless comment.body.nil? %>
-  <% end %>
- </div> 
+   <%= link_to 'Delete', comment_path(comment), :method => :delete, :class => "delete" , :remote => true%> 
+  </span> 
+  <p><b><%= comment.name %></b> wrote:</p>
+  <br/>
+-->
+<%=  comment.body.html_safe  %>
+ <%= link_to 'x', comment_path(comment), :method => :delete, :class => "delete" , :remote => true%> 
 <% end %>
-
-

@@ -55,7 +55,7 @@ class CommentsController < ApplicationController
 
 def create
     $index = @index||0
-    farben =['0000ff','5672FC','4F69FF','FF69BF','9969BF','CC9CBF','0000AF','7fff00','e9967a']
+    farben =['0000ff','003300','FF69BF','9969BF','452E7B','330000','99B200','e9967a','5672FC','A50021','5F5F5F']
     letzter_kommentar = Comment.last
     unless letzter_kommentar.nil? then
       if params[:neuer]=='1'       
